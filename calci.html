@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <style>
+        body{
+        background-color: pink;
+        border-style:solid;
+        }
+        </style>
+</head>
+    <body align="center">
+        <h1 align="center">Simple Calculator</h1>
+        <input type="number" id="num1">&nbsp;&nbsp;
+        <input type="number" id="num2"><br><br><br>
+        <button type="button" class="btn btn-primary" onclick="add()">add</button>
+        <button type="button" class="btn btn-secondary" onclick="sub()">sub</button>
+        <button type="button" class="btn btn-success" onclick="mul()">mul</button>
+        <button type="button" class="btn btn-danger" onclick="div()">div</button>
+        <h1 id="h1"></h1>
+    </body>
+    <style>
+        body{
+            color:aqua;
+        }
+        </style>
+    <script>
+        function add()
+        {
+            a=parseInt(document.getElementById("num1").value);
+            b=parseInt(document.getElementById("num2").value);
+            document.getElementById("h1").innerHTML=a+b;
+        }
+         function sub()
+        {
+            a=parseInt(document.getElementById("num1").value);
+            b=parseInt(document.getElementById("num2").value);
+            document.getElementById("h1").innerHTML=a-b;
+        }
+         function mul()
+        {
+            a=parseInt(document.getElementById("num1").value);
+            b=parseInt(document.getElementById("num2").value);
+            document.getElementById("h1").innerHTML=a*b;
+        }
+         function div()
+        {
+            a=parseInt(document.getElementById("num1").value);
+            b=parseInt(document.getElementById("num2").value);
+            document.getElementById("h1").innerHTML=a/b;
+        }
+       </script>
+</html>
