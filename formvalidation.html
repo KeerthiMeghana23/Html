@@ -1,0 +1,75 @@
+<html>
+<head>
+    <title>Form Validation</title>
+    <style>
+    .error{
+        color:red;
+    }
+    </style>
+</head>
+<body>
+    <form id="RegistrationForm" onsubmit="return validateForm()">
+    <fieldset>
+        <h1 align="center">Registration Form</h1>
+
+        <label>Name:</label><br>
+        <input type="text" id="name" autofocus><br>
+        <span id="nameError" class="error"></span><br>
+
+        <label>Email:</label><br>
+        <input type="email" id="email"><br>
+        <span id="emailError" class="error"></span><br>
+
+        <label>Password:</label><br>
+        <input type="text" id="password"><br>
+        <span id="passwordError" class="error"></span><br>
+
+        <label>Mobile Number:</label><br>
+        <input type="tel" id="phone"><br>
+        <span id="phoneError" class="error"></span><br>
+
+        <button type="submit">Submit</button>
+    </fieldset>
+    </form>
+
+    <script>
+        function validateForm()
+         {
+            let isValid = true;
+
+            document.getElementById("nameError").innerText = "";
+            document.getElementById("emailError").innerText = "";
+            document.getElementById("passwordError").innerText = "";
+            document.getElementById("phoneError").innerText = "";
+
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let password = document.getElementById("password").value.trim();
+            let phone = document.getElementById("phone").value.trim();
+
+            if (name === "") {
+                document.getElementById("nameError").innerText = "Name is required";
+                isValid = false;
+            }
+
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                document.getElementById("emailError").innerText = "Please enter a valid email address";
+                isValid = false;
+            }
+
+            if (password.length < 6) {
+                document.getElementById("passwordError").innerText = "Password must be at least 6 characters";
+                isValid = false;
+            }
+
+            if (phone.length !== 10) {
+                document.getElementById("phoneError").innerText = "Mobile number must be exactly 10 digits";
+                isValid = false;
+            }
+
+            return isValid;
+        }
+    </script>
+</body>
+</html>
